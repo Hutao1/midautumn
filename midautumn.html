@@ -44,26 +44,94 @@
 			}
 			.p2{
 				position: absolute;
-				right: 20px;
+				right: 25px;
 				bottom:175px;
 				color: red;
 			}
 			.p3{
 				position: absolute;
-				right: 80px;
+				right: 85px;
 				bottom:150px;
 				color: white;
 			}
 			.p4{
 				position: absolute;
-				right: 140px;
+				right: 145px;
 				bottom:125px;
-				color: white;
+				color: pink;
 			}
 			.love{
 				position: absolute;
 				right: 180px;
 				bottom:30px;
+			}
+			.p5{
+				position: absolute;
+				left: 20px;
+				top:10vh;
+				color: blue;
+			}
+			.p6{
+				position: absolute;
+				right: 20px;
+				top:25vh;
+				color: white;
+			}
+			.p7{
+				position: absolute;
+				right: 80px;
+				top:40vh;
+				color: white;
+			}
+			.p8{
+				position: absolute;
+				right: 140px;
+				top:55vh;
+				color: white;
+			}
+			.love2{
+				position: absolute;
+				left: 5vw;
+				top:30vh;
+			}
+			.w1{
+				position: absolute;
+				top:15vh;
+				left: 25vw;
+			}
+			.w2{
+				position: absolute;
+				bottom: 15vh;
+				right: 25vw;
+			}
+			.w3{
+				position: absolute;
+				top: 15vh;
+				right:25vw;
+			}
+			.w4{
+				position: absolute;
+				top: 0vh;
+				right: 25vw;
+			}
+			
+			@keyframes fadeInBottom {
+			  0% {
+			    opacity: 1;
+			    -webkit-transform: scale(1,1) translate3d(-100%, 800px, 0);
+			    transform: scale(1,1) translate3d(-100%, 1000px, 0);
+			 }
+
+			  100% {
+			    opacity: 0;
+			    -webkit-transform: scale(0.3,0.3) translate3d(0, 0, 0);
+			    transform: scale(0.3,0.3) translate3d(0, 0, 0);
+			  }
+			}
+
+			.fadeInBottom {
+			  -webkit-animation-name: fadeInBottom;
+			  animation-name: fadeInBottom;
 			}
 		</style>
 	</head>
@@ -80,15 +148,24 @@
 					看着他长大</p>
 					<p class="p4 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="5.3s">
 					照顾他 保护他</p>
-					<img src="love.png" class="love ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="8.3s"/>
+					<img src="img/love.png" class="love ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="8.3s"/>
 				</div>
 				<div class="swiper-slide red-slide">
-					<div class="title">Slide 2</div>
-					<p>Keep swiping</p>
+					<p class="p5 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						小时候他总是那么不懂事</p>
+					<p class="p6 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.3s">
+						你们教会他坚强与勇敢</p>
+					<p class="p7 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="3s" swiper-animate-delay="2.3s">
+					如今他已长大</p>
+					<p class="p8 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="5.3s">
+					想要好好孝顺你们</p>
+					<img src="img/love2.png" class="love2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="8.3s"/>
 				</div>
 				<div class="swiper-slide orange-slide">
-					<div class="title">Slide 3</div>
-					<p>The last one</p>
+					<img src="img/move3.png" class="w4 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="6s" swiper-animate-delay="6.3s"/>
+					<img src="img/1.png" class="w3 ani" swiper-animate-effect="fadeInBottom" swiper-animate-duration="15s" swiper-animate-delay="6.3s"/>
+					<img src="img/word2.png" class="w1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="6s" swiper-animate-delay=".3s"/>
+					<img src="img/word.png" class="w2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="6s" swiper-animate-delay=".3s"/>
 				</div>
 			</div>
 		</div>
@@ -101,7 +178,7 @@
 	window.onload = function(){
 		var audio = new Audio();
 		audio.src = "bbmm.mp3";
-		audio.play();
+//		audio.play();
 		var mySwiper = new Swiper('.swiper-container',{
 	    	direction: 'vertical',
 	    	effect : 'cube',
