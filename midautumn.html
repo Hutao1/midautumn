@@ -11,6 +11,7 @@
 			* {
 				margin: 0;
 				padding: 0;
+				font-family: "微软雅黑";
 			}
 			body{
 				color: #fff;
@@ -32,21 +33,37 @@
 			.swiper-slide{
 				position: relative;
 			}
-			.audio{
-				position: absolute;
-				z-index: 9999;
-				top: 30px;
-				right: 30px;
-				width: 30px;
-				height: 30px;
-				background: url(audiologo.svg) no-repeat;
-				background-size: contain;
+			p{
+				font-size: 16px;
 			}
 			.p1{
 				position: absolute;
 				left: 20px;
 				bottom:200px;
-				color: #f00;
+				color: blue;
+			}
+			.p2{
+				position: absolute;
+				right: 20px;
+				bottom:175px;
+				color: red;
+			}
+			.p3{
+				position: absolute;
+				right: 80px;
+				bottom:150px;
+				color: white;
+			}
+			.p4{
+				position: absolute;
+				right: 140px;
+				bottom:125px;
+				color: white;
+			}
+			.love{
+				position: absolute;
+				right: 180px;
+				bottom:30px;
 			}
 		</style>
 	</head>
@@ -56,7 +73,14 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide blue-slide">
 					<p class="p1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
-						22年前，胡彩松先生和练春红女士生下了一个小宝宝</p>
+						22年前，胡先生和练女士生下了一个小宝宝</p>
+					<p class="p2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.3s">
+						给他取名叫胡涛</p>
+					<p class="p3 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="2.3s">
+					看着他长大</p>
+					<p class="p4 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="5.3s">
+					照顾他 保护他</p>
+					<img src="love.png" class="love ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="8.3s"/>
 				</div>
 				<div class="swiper-slide red-slide">
 					<div class="title">Slide 2</div>
@@ -67,7 +91,6 @@
 					<p>The last one</p>
 				</div>
 			</div>
-			<div class="audio"></div>
 		</div>
 	</body>
 
@@ -75,15 +98,21 @@
 <script src="swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	var mySwiper = new Swiper('.swiper-container',{
-    	direction: 'vertical',
-    	effect : 'cube',
-    	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-	    swiperAnimateCache(swiper); //隐藏动画元素 
-	    	swiperAnimate(swiper); //初始化完成开始动画
-	  	}, 
-	  	onSlideChangeEnd: function(swiper){ 
-	    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-	  	} 
-  })
+	window.onload = function(){
+		var audio = new Audio();
+		audio.src = "bbmm.mp3";
+		audio.play();
+		var mySwiper = new Swiper('.swiper-container',{
+	    	direction: 'vertical',
+	    	effect : 'cube',
+	    	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		    swiperAnimateCache(swiper); //隐藏动画元素 
+		    	swiperAnimate(swiper); //初始化完成开始动画
+		  	}, 
+		  	onSlideChangeEnd: function(swiper){ 
+		    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		  	} 
+	  	})
+		
+	}
 </script>
